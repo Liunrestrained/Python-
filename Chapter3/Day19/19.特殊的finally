@@ -1,0 +1,22 @@
+# 情景1：
+try:
+    '''# 逻辑代码'''
+except Exception as e:
+    '''# try中的代码如果有异常，则此代码块中的代码会执行。'''
+finally:
+    '''# try中的代码无论是否报错，finally中的代码都会执行，一般用于释放资源。'''
+
+print("end")
+
+
+# 情景2：
+def func():
+    try:
+        return 123  # 先执行finally
+    except Exception as e:
+        pass
+    finally:  # 不论前面是否有return,先执行finally，再执行return
+        print(666)
+
+
+func()
